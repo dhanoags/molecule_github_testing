@@ -3,9 +3,8 @@
   hosts: all
 
   tasks:
-    - name: Update apt cache
-      apt:
-        update_cache: true
-        cache_valid_time: 3600
-
-- import_playbook: ../../main.yml
+    - name: "Include molecule_github_testing"
+      include_role:
+        name: "testrole"
+#
+#- import_playbook: ../../main.yml

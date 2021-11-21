@@ -5,17 +5,6 @@
   hosts: all
   
   tasks:
-  - name: Check file exists
-    stat:
-      path: /tmp/testfile
-      getchecksum: false
-    register: st
-
-  - name: Verify permissions
-    assert: 
-      that:
-        - st.stat.readable
-
   - name: Verify Apache is serving web requests.
     uri:
       url: http://localhost/
