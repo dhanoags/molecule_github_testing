@@ -1,0 +1,27 @@
+---
+# tasks file for testrole
+- name: Create file
+  file:
+    path: /tmp/testfile
+    mode: '0644'
+
+- name: Install apache2
+  package:
+    name: apache2
+    state: present
+
+- name: Copy a webpage
+  copy:
+    content: |
+      <html>
+        <head><title>Hello world!</title></head>
+        <body>Hello world!</body>
+      </html>
+    dest: "/var/www/html/index.html"
+    mode: 0664
+  notify: restart apache
+
+- name: Ensure Apache is Running
+  command:
+    cmd: /usr/sbin/apache2ctl -k start
+  changed_when: false

@@ -1,0 +1,3 @@
+---
+# vars file for testrole
+ansible_remote_tmp: /tmp/.ansible/tmp

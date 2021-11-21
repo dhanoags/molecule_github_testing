@@ -1,0 +1,5 @@
+---
+# handlers file for testrole
+- name: restart apache
+  command:
+    cmd: /usr/sbin/apache2ctl -k restart

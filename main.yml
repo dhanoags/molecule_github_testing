@@ -1,0 +1,11 @@
+---
+- name: Test role
+  hosts: all
+  
+  vars:
+    ansible_remote_tmp: /tmp/.ansible/tmp
+  
+  roles:
+    - testrole
+
+  
